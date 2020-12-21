@@ -1,0 +1,22 @@
+package com.logic;
+
+public class ConvertFirstLettertoCapit {
+	 public String titlecase(String str)
+	 {
+		 String st[]=str.split(" ");
+		 String capp="";
+		 for(String s:st)
+		 {
+			 String titl=s.substring(0,1).toUpperCase();
+			 String upp=s.substring(1);
+			 capp=capp+titl+upp;
+		 }
+		 return capp.trim();
+	 }
+	 public static void main(String[] args) 
+	 {
+		 ConvertFirstLettertoCapit c=new ConvertFirstLettertoCapit();
+		 c.titlecase("lenevo laptop");
+	}
+
+}

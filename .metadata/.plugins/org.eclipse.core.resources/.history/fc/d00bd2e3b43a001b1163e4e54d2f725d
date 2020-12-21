@@ -1,0 +1,19 @@
+package com.Stringclean;
+
+public class StringClean 
+{
+	public static void main(String[] args)
+	{
+		String st="yyzzaa";
+		for (int i = 0; i < args.length; i++) 
+		{
+			for (int j = i+1; j < args.length; j++) 
+			{
+				if(i==j)
+				{
+					System.out.println(j);
+				}
+			}
+		}
+	}
+}

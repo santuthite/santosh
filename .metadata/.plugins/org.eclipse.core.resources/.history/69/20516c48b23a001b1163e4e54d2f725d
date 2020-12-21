@@ -1,0 +1,34 @@
+package com.catDog;
+
+public class CatDog 
+
+{
+public static void main(String[] args)
+{
+	CatDog c=new CatDog();
+	c.catDog("catdog");
+}
+public String catDog(String str) 
+{
+    int count = 0;
+    for (int i = 0; i < str.length() - 2; i++) 
+    {
+        if (str.substring(i, i + 3).equals("cat")) 
+        {
+            count++;
+        }
+        if (str.substring(i, i + 3).equals("dog"))
+        {
+            count--;
+        }
+    }
+    if (count == 0) 
+    {
+        return "true";
+    }
+    else
+    {
+    return "faalse";
+    }
+}
+}

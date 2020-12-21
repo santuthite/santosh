@@ -1,0 +1,64 @@
+package com.logic.flentas;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+public class Test 
+{
+public static void main(String[] args) throws Exception {
+	String str[]= {"10:00 AM-12:30 PM","02:00 PM-02:45 PM","05:45 PM-07:45 PM","09:10 AM-09:50 AM","01:00 PM-3:00 PM",};
+	long max=0;
+	for (int i = 0; i < str.length; i++) 
+	{	
+		
+		for (int j = i+1; j < str.length; j++) 
+		{
+			String s=str[i].substring(9);
+			String s1=str[j].substring(0,8);
+			System.out.println(s+" "+s1);
+			/*
+			 * DateTimeFormatter f = DateTimeFormatter.ofPattern("HH:mm:ss a"); LocalTime
+			 * start = LocalTime.parse(s, f); LocalTime stop = LocalTime.parse(s1, f);
+			 * Duration d = Duration.between(start, stop); System.out.println(d.toString());
+			 */
+			  SimpleDateFormat fm=new SimpleDateFormat("hh:mm a"); 
+			  Date d1=null; 
+			  Date d2=null;
+			  try 
+			  { 
+			  d1=fm.parse(s); 
+			  d2=fm.parse(s1); 
+			  }
+			  catch (ParseException e) 
+			  {
+			    e.printStackTrace();
+			   }
+			  long diff=d2.getTime()-d1.getTime(); 
+			  System.out.println(diff);
+			  if(max<diff)
+			  {
+				  max=diff;
+				  System.out.println(max);
+			  }
+			 
+			  String hms = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toHours(diff),
+			            TimeUnit.MILLISECONDS.toMinutes(diff) - TimeUnit.HOURS.toMinutes
+			            (TimeUnit.MILLISECONDS.toHours(diff)));
+			  System.out.println(hms);
+			break;
+		}
+		
+		
+	}
+	/*
+	 * if(hms.length()>0) { System.out.println(hms); }
+	 */
+	
+}
+}

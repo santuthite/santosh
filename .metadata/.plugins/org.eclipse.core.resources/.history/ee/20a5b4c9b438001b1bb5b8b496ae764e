@@ -1,0 +1,28 @@
+package com.logic;
+
+public class SwapWithoutThird 
+{
+	public static void main(String[] args) 
+	{
+		int n1=25;
+		int n2=50;
+		
+		n1=n1+n2;
+		System.out.println(n1);
+		
+		n2=n1-n2;
+		System.out.println(n2);
+		
+		n1=n1-n2;
+		System.out.println(n1);
+		
+		String s1="Santosh";
+		String s2="Thite";
+		
+		s1=s1+s2;
+		System.out.println(s1);
+		
+		s2=s1.substring(0,(s1.length()-s2.length()))
+		
+	}
+}

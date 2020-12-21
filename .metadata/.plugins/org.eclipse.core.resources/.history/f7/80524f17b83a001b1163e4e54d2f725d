@@ -1,0 +1,19 @@
+package com.Stringclean;
+
+public class StringClean 
+{
+	
+	public void m1(String str)
+	{
+		if(str.charAt(0)==str.charAt(1))
+		
+		System.out.println(str.substring(1));
+		System.out.println(str.charAt(0)+m1(str.substring(1)));
+	}
+	public static void main(String[] args)
+	{
+		StringClean s=new StringClean();
+		s.m1("yyzzaa");
+	}
+	
+}
